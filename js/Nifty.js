@@ -322,7 +322,7 @@ $(document).ready(function () {
                 },
             },
             tooltip: {
-                enabled:false,
+                enabled:true,
                 split: true,
                 formatter: function () {
                     tooltipArray = ''
