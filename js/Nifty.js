@@ -156,29 +156,30 @@ $(document).ready(function () {
                     }
                 ],
                 tooltip: {
-                    enabled:false,
-                    positioner: function () {
-                        return { x: 0, y: 10 };
-                    },
+                    enabled:true,
+                    // positioner: function () {
+                    //     return { x: 0, y: 10 };
+                    // },
                     split: true,
                     formatter: function () {
-                        tooltipArray = ['<b>' + moment.unix(this.x).format('h:mm a') + '</b>']
-                        for (var i = 0; i < this.points.length; i++) {
-                            if (i == 0) {
-                                console.log(this.points[i].y)
-                                for (var j = 0; j < ohlc_Nifty.length; j++) {
-                                    if (this.points[i].y == ohlc_Nifty[j][4]) {
-                                        i = j
-                                        tooltipArray.push('Open:' + ohlc_Nifty[i][1] + '<br> High:' + ohlc_Nifty[i][2] + '<br> Low:' + ohlc_Nifty[i][3] + '<br> Close:' + ohlc_Nifty[i][4])
-                                        break;
-                                    }
-                                }
-                                i = 0
-                            }
-                            else if (i == 1) {
-                                tooltipArray.push('Volume:' + this.points[i].y)
-                            }
-                        }
+                        tooltipArray = ''
+                        // tooltipArray = ['<b>' + moment.unix(this.x).format('h:mm a') + '</b>']
+                        // for (var i = 0; i < this.points.length; i++) {
+                        //     if (i == 0) {
+                        //         console.log(this.points[i].y)
+                        //         for (var j = 0; j < ohlc_Nifty.length; j++) {
+                        //             if (this.points[i].y == ohlc_Nifty[j][4]) {
+                        //                 i = j
+                        //                 tooltipArray.push('Open:' + ohlc_Nifty[i][1] + '<br> High:' + ohlc_Nifty[i][2] + '<br> Low:' + ohlc_Nifty[i][3] + '<br> Close:' + ohlc_Nifty[i][4])
+                        //                 break;
+                        //             }
+                        //         }
+                        //         i = 0
+                        //     }
+                        //     else if (i == 1) {
+                        //         tooltipArray.push('Volume:' + this.points[i].y)
+                        //     }
+                        // }
                         return tooltipArray;
                     }
                 },
@@ -242,36 +243,37 @@ $(document).ready(function () {
                 },
             },
             tooltip: {
-                enabled:false,
-                split: true,
+                enabled:true,
+                // split: true,
                 formatter: function () {
-                    tooltipArray = ["<b>" + moment.unix(this.x).format("h:mm a") + "</b>"];
-                    for (var i = 0; i < this.points.length; i++) {
-                        if (i == 0) {
-                            if (i == 0) {
-                                // console.log(this.points[i].y)
-                                for (var j = 0; j < ohlc_Nifty.length; j++) {
-                                    if (this.points[i].y == ohlc_Nifty[j][4]) {
-                                        i = j;
-                                        tooltipArray.push(
-                                            "Open:" +
-                                            ohlc_Nifty[i][1] +
-                                            "<br> High:" +
-                                            ohlc_Nifty[i][2] +
-                                            "<br> Low:" +
-                                            ohlc_Nifty[i][3] +
-                                            "<br> Close:" +
-                                            ohlc_Nifty[i][4]
-                                        );
-                                        break;
-                                    }
-                                }
-                                i = 0;
-                            }
-                        } else if (i == 1) {
-                            tooltipArray.push("Volume:" + this.points[i].y);
-                        }
-                    }
+                    tooltipArray = ''
+                    // tooltipArray = ["<b>" + moment.unix(this.x).format("h:mm a") + "</b>"];
+                    // for (var i = 0; i < this.points.length; i++) {
+                    //     if (i == 0) {
+                    //         if (i == 0) {
+                    //             // console.log(this.points[i].y)
+                    //             for (var j = 0; j < ohlc_Nifty.length; j++) {
+                    //                 if (this.points[i].y == ohlc_Nifty[j][4]) {
+                    //                     i = j;
+                    //                     tooltipArray.push(
+                    //                         "Open:" +
+                    //                         ohlc_Nifty[i][1] +
+                    //                         "<br> High:" +
+                    //                         ohlc_Nifty[i][2] +
+                    //                         "<br> Low:" +
+                    //                         ohlc_Nifty[i][3] +
+                    //                         "<br> Close:" +
+                    //                         ohlc_Nifty[i][4]
+                    //                     );
+                    //                     break;
+                    //                 }
+                    //             }
+                    //             i = 0;
+                    //         }
+                    //     } else if (i == 1) {
+                    //         tooltipArray.push("Volume:" + this.points[i].y);
+                    //     }
+                    // }
                     return tooltipArray;
                 },
             },
@@ -323,33 +325,34 @@ $(document).ready(function () {
                 enabled:false,
                 split: true,
                 formatter: function () {
-                    tooltipArray = ["<b>" + moment.unix(this.x).format("h:mm a") + "</b>"];
-                    for (var i = 0; i < this.points.length; i++) {
-                        if (i == 0) {
-                            if (i == 0) {
-                                // console.log(this.points[i].y)
-                                for (var j = 0; j < ohlc_BankNifty.length; j++) {
-                                    if (this.points[i].y == ohlc_BankNifty[j][4]) {
-                                        i = j;
-                                        tooltipArray.push(
-                                            "Open:" +
-                                            ohlc_BankNifty[i][1] +
-                                            "<br> High:" +
-                                            ohlc_BankNifty[i][2] +
-                                            "<br> Low:" +
-                                            ohlc_BankNifty[i][3] +
-                                            "<br> Close:" +
-                                            ohlc_BankNifty[i][4]
-                                        );
-                                        break;
-                                    }
-                                }
-                                i = 0;
-                            }
-                        } else if (i == 1) {
-                            tooltipArray.push("Volume:" + this.points[i].y);
-                        }
-                    }
+                    tooltipArray = ''
+                    // tooltipArray = ["<b>" + moment.unix(this.x).format("h:mm a") + "</b>"];
+                    // for (var i = 0; i < this.points.length; i++) {
+                    //     if (i == 0) {
+                    //         if (i == 0) {
+                    //             // console.log(this.points[i].y)
+                    //             for (var j = 0; j < ohlc_BankNifty.length; j++) {
+                    //                 if (this.points[i].y == ohlc_BankNifty[j][4]) {
+                    //                     i = j;
+                    //                     tooltipArray.push(
+                    //                         "Open:" +
+                    //                         ohlc_BankNifty[i][1] +
+                    //                         "<br> High:" +
+                    //                         ohlc_BankNifty[i][2] +
+                    //                         "<br> Low:" +
+                    //                         ohlc_BankNifty[i][3] +
+                    //                         "<br> Close:" +
+                    //                         ohlc_BankNifty[i][4]
+                    //                     );
+                    //                     break;
+                    //                 }
+                    //             }
+                    //             i = 0;
+                    //         }
+                    //     } else if (i == 1) {
+                    //         tooltipArray.push("Volume:" + this.points[i].y);
+                    //     }
+                    // }
                     return tooltipArray;
                 },
             },
